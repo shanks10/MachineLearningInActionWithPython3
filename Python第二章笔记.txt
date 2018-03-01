@@ -89,3 +89,84 @@ e2 = 1
 
 例子：
 array([2,1,8,4]).argsort() = array([1, 0, 3, 2], dtype=int64);
+
+7.字典的get()方法
+D.get(k[,d]) -> D[k] if k in D, else d.  d defaults to None.
+字典 get()函数返回指定键的值，如果键不存在，返回第二个参数，第二个参数是默认是None。
+dict.get(key, default=None)
+
+例子：
+dictA = {'test': 'hello', 'age': 27}
+dictA.get("test") = 'hello',
+dictA.get("age") = 27,
+dictA.get("age",20) = 27,
+dictA.get("noKey",20) = 20,
+dictA.get("noKey") = None
+
+8.字典的items()方法
+字典 items() 方法以列表返回可遍历的(键, 值) 元组数组
+
+例子：
+dictA = {'test': 'hello', 'age': 27}
+dictA.items() = dict_items([('test', 'hello'), ('age', 27)])，
+for i,j in dictA.items():
+    print(i,":",j)
+输出：
+test : hello
+age : 27
+
+9.operator.itemgetter()
+operator.itemgetter()获取的不是值，而是定义了一个函数，通过该函数作用到对象上才能获取值
+After f = itemgetter(2), the call f(r) returns r[2].
+After g = itemgetter(2, 5, 3), the call g(r) returns (r[2], r[5], r[3])
+
+例子：
+
+listA = ["test","age","name"]
+
+f = operator.itemgetter(1)
+f(listA) = 'age',
+
+f = operator.itemgetter(0,1)
+f(listA) = ('test', 'age')
+
+10.sorted(iterable, key=None, reverse=False)sorted() 函数对所有可迭代的对象进行排序操作
+
+sort 与 sorted 区别：
+sort 是应用在 list 上的方法，sorted 可以对所有可迭代的对象进行排序操作。
+list 的 sort 方法返回的是对已经存在的列表进行操作，而内建函数 sorted 方法返回的是一个新的 list，而不是在原来的基础上进行的操作。
+
+key函数接受一个参数，
+排序过程：key函数作用于iterable的每一个元素上，得到结果keyResult，然后sorted()函数对keyResult进行排序，得到sortedKeyResult,最后按照sortedKeyResult和iterable的对应关系返回iterable排序后的结果。
+
+例子：
+
+sorted([36, 5, -12, 9, -21]) = [-21, -12, 5, 9, 36]；
+
+sorted([36, 5, -12, 9, -21], key=abs) = [5, 9, -12, -21, 36]
+排序过程：
+（1）key函数作用于iterable的每一个元素上，得到结果keyResult = [36, 5,  12, 9,  21]
+（2）然后sorted()函数对keyResult进行排序，得到sortedKeyResult = [5, 9,  12,  21, 36]
+（3）最后按照sortedKeyResult和iterable的对应关系返回iterable排序后的结果
+sortedKeyResult   =  [5, 9,  12,  21, 36]
+iterable的对应关系 =  [5, 9, -12, -21, 36]
+最后结果为 [5, 9, -12, -21, 36]
+
+11.读取文件的三个方法：read()、readline()、readlines()，三个方法均可接受一个变量用以限制每次读取的数据量，通常不使用该变量。
+
+read():
+1.读取整个文件，将文件内容放到一个字符串变量中
+2.如果文件大于可用内存，不可能使用这种处理
+
+readline():
+1.readline()每次读取一行，比readlines()慢得多
+2.readline()返回的是一个字符串对象，保存当前行的内容
+
+readlines():
+1.一次性读取整个文件。
+2.自动将文件内容分析成一个行的列表。
+
+逐行读建议用：
+with open("file") as fh:
+    for line in fh:
+        print(line.strip())
