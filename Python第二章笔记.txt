@@ -130,7 +130,8 @@ f(listA) = 'age',
 f = operator.itemgetter(0,1)
 f(listA) = ('test', 'age')
 
-10.sorted(iterable, key=None, reverse=False)sorted() 函数对所有可迭代的对象进行排序操作
+10.sorted(iterable, key=None, reverse=False)
+sorted() 函数对所有可迭代的对象进行排序操作
 
 sort 与 sorted 区别：
 sort 是应用在 list 上的方法，sorted 可以对所有可迭代的对象进行排序操作。
@@ -188,3 +189,14 @@ S.split(sep=None, maxsplit=-1) -> list of strings
     splits are done. If sep is not specified or is None, any
     whitespace string is a separator and empty strings are
     removed from the result.
+
+14.os.listdir
+listdir(path=None)
+    Return a list containing the names of the files in the directory.
+
+    path can be specified as either str or bytes.  If path is bytes,
+      the filenames returned will also be bytes; in all other circumstances
+      the filenames returned will be str
+
+    The list is in arbitrary order.  It does not include the special
+    entries '.' and '..' even if they are present in the directory.
