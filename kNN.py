@@ -81,6 +81,23 @@ def autoNorm(dataSet):
     normDataSet = normDataSet / tile(ranges, (m, 1))
     return normDataSet, ranges, minVals
 
+
+def datingClassTest():
+    hoRatio = 0.50
+    datingDataMat, datingLabels = file2matrix('datingTestSet2.txt')
+    normMat, ranges, minVals = autoNorm(datingDataMat)
+    m = normMat.shape[0]
+    # numTestVecs个数据
+    numTestVecs = int(m * hoRatio)
+    errorCount = 0.0
+    for i in range(numTestVecs):
+        classifierResult = classify0(normMat[i, :], normMat[numTestVecs:m, :], datingLabels[numTestVecs:m], 3)
+        print("the classifier came back with: %d, the real answer is: %d" %(classifierResult, datingLabels[i]))
+        if (classifierResult != datingLabels[i]):
+            errorCount += 1.0
+    print("the total error rate is: %f" % (errorCount / float(numTestVecs)))
+    print(errorCount)
+
 # 将32x32的图像数据提取到1x1024的numpy数组中(每幅图像都要转成1x1024的numpy数组)
 def img2vector(filename):
     returnVect = zeros((1, 1024))
@@ -89,7 +106,7 @@ def img2vector(filename):
         # 读取一行
         lineStr = fr.readline()
         for j in range(32):
-            returnVect = [0, 32 * i + j] = int(lineStr[j])
+            returnVect[0, 32 * i + j] = int(lineStr[j])
     return returnVect
 
 

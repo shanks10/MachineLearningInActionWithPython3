@@ -1,0 +1,37 @@
+1.log(...)
+    log(x[, base])
+    
+    Return the logarithm of x to the given base.
+    If the base not specified, returns the natural logarithm (base e) of x.
+
+2.dict.keys(),dict.values(),dict.items()
+keys(...)
+    D.keys() -> a set-like object providing a view on D's keys
+
+values(...)
+    D.values() -> an object providing a view on D's values
+
+items(...)
+    D.items() -> a set-like object providing a view on D's items
+
+
+例子：
+labelCounts = {'no': 3, 'yes': 2}
+labelCounts.keys() = dict_keys(['yes', 'no'])
+labelCounts.values() = dict_values([2, 3])
+labelCounts.items() = dict_items([('yes', 2), ('no', 3)])
+
+for key in labelCounts:
+    print(key)
+输出:yes no
+
+3.list.extend()
+extend(...)
+    L.extend(iterable) -> None -- extend list by appending elements from the iterable
+
+例子：
+
+a = [1,2,3]
+b = [4,5,6]
+a.extend(b)
+a = [1, 2, 3, 4, 5, 6]
