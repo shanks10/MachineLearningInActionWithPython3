@@ -35,3 +35,24 @@ a = [1,2,3]
 b = [4,5,6]
 a.extend(b)
 a = [1, 2, 3, 4, 5, 6]
+
+4.list.count()
+count(...)
+    L.count(value) -> integer -- return number of occurrences of value
+
+5.list.index()
+index(...)
+    L.index(value, [start, [stop]]) -> integer -- return first index of value.
+    Raises ValueError if the value is not present.
+
+例子：
+aa = [1,5,'hello']
+aa.index(5) = 1
+aa.index('hello') = 2
+
+6.pickle.dump(), picke.load()
+dump(obj, file, protocol=None, *, fix_imports=True)
+    Write a pickled representation of obj to the open file object file.
+
+load(file, *, fix_imports=True, encoding='ASCII', errors='strict')
+    Read and return an object from the pickle data stored in a file.
