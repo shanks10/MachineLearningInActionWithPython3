@@ -1,0 +1,44 @@
+1.set | 
+集合 或运算
+
+例子：
+
+a = [1,2]
+b = [2,3]
+set(a) | set(b) = {1, 2, 3}
+
+2.list *
+
+例子：
+
+a = [1,2]
+a * 2 = [1, 2, 1, 2]
+a * 3 = [1, 2, 1, 2, 1, 2]
+
+3.list.remove
+remove(...)
+    L.remove(value) -> None -- remove first occurrence of value.
+    Raises ValueError if the value is not present.
+remove() 函数用于移除列表中某个值的第一个匹配项。
+
+例子：
+a = [123, 'xyz', 'zara', 'abc', 'xyz']
+a.remove('xyz') = [123, 'zara', 'abc', 'xyz']
+
+4.del
+del是python语句，而不是列表方法，无法通过list来调用。使用del可以删除一个元素，当元素删除之后，位于它后面的元素会自动移动填补空出来的位置。
+
+del(list[index])
+
+例子：
+a = [123, 'xyz', 'zara', 'abc', 'xyz']
+del(a[0])
+a = ['xyz', 'zara', 'abc', 'xyz']
+
+5.list.pop
+pop(...)
+    L.pop([index]) -> item -- remove and return item at index (default last).
+
+5.random.uniform()
+用法：random.uniform(x, y)
+uniform() 方法将随机生成下一个实数，它在[x,y)范围内
