@@ -1,0 +1,13 @@
+1.mat(list),mat(array)
+转为matrix
+
+2.mat.getA()
+matrix转为array
+
+3.arange()
+
+例子：
+numpy.arange(3) = array([0, 1, 2])
+numpy.arange(3.0) = array([ 0.,  1.,  2.])
+numpy.arange(3,7) = array([3, 4, 5, 6])
+numpy.arange(3,7,2) = array([3, 5])
