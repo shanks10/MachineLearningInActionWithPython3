@@ -1,0 +1,16 @@
+1.矩阵multiply和*
+multiply 表示对应元素相乘(矩阵大小相同)，* 表示矩阵乘法
+
+
+例子
+a = array([[1, 4],
+           [3, 6]])
+
+b = array([[2, 3],
+           [2, 5]])
+
+multiply(mat(a),mat(b)) = matrix([[ 2, 12],
+                                  [ 6, 30]])
+
+mat(a) * mat(b) = matrix([[10, 23],
+                          [18, 39]])
